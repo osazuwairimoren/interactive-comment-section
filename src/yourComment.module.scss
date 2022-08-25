@@ -1,0 +1,209 @@
+// comment component styling
+.comment {
+    width: 100%;
+    background-color: hsl(0, 0%, 100%);
+    margin: auto;
+    margin-right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-height: 5rem;
+    height: fit-content;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    // score component inside comment component
+    .score {
+        background-color: hsl(223, 19%, 93%);
+        color: hsl(211, 10%, 45%);
+        height: 4.5rem;
+        margin-bottom: auto;
+        border-radius: 7px;
+        display: flex;
+        flex-direction: column;
+        width: 1.8rem;
+        align-items: center;
+        justify-content: space-evenly;
+
+        // plus and minus icons
+        [alt="plus"] {
+            width: 0.9rem;
+        }
+        [alt="minus"] {
+            width: 0.9rem;
+        }
+        // score value
+        span {
+            margin-top: 0rem;
+            margin-bottom: 0rem;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: hsl(238, 40%, 52%);
+        }
+    }
+    // other row
+    .other {
+        color: hsl(211, 10%, 45%);
+        margin-left: 1rem;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        // top section in other row
+        .otherfirstRow {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            padding-bottom: 0.5rem;
+            // first section in other section
+            .otherfirstRowCollumn {
+                display: flex;
+                // profile picture
+                [alt="user"] {
+                    width: 2rem;
+                    height: 2rem;
+                    margin-right: 0.5rem;
+                }
+                .userName {
+                    font-weight: bold;
+                    margin-right: 0.5rem;
+                }
+                button {
+                    background-color: hsl(238deg, 40%, 52%);
+                    text-transform: capitalize;
+                    border-radius: 5px;
+                    margin-right: 0.5rem;
+                    height: 1.5rem;
+                    border: none;
+                    color: white;
+                    cursor: auto;
+                }
+            }
+            .manageComment {
+                display: flex;
+                flex-direction: row;
+                .deleteSection {
+                    cursor: pointer;
+                    [alt="delete"] {
+                        width: 1rem;
+                        height: 1rem;
+                        margin-right: 0.5rem;
+                    }
+                    .delete {
+                        margin-right: 0.5rem;
+                        color: hsl(358, 79%, 66%);
+                    }
+                    .delete:hover {
+                        color: hsl(357, 100%, 86%);
+                    }
+                    [alt="edit"] {
+                        width: 1rem;
+                        height: 1rem;
+                        margin-right: 0.5rem;
+                    }
+                    span {
+                        color: hsl(238, 40%, 52%);
+                        text-transform: capitalize;
+                        font-weight: bolder;
+                    }
+                    span:hover {
+                        color: hsl(223, 19%, 93%);
+                    }
+                }
+            }
+        }
+        // other section/main reply
+        .otherSecondRow {
+            color: hsl(212, 24%, 26%);
+        }
+        // mobile screen
+        .showOnMobile {
+            display: none;
+            justify-content: space-between;
+            padding-top: 1rem;
+            .score {
+                display: flex !important;
+                flex-direction: row;
+                justify-content: space-around;
+                height: 1.9rem;
+                width: 5rem;
+            }
+            .manageComment {
+                display: flex !important;
+                cursor: pointer;
+                .deleteSection {
+                    cursor: pointer;
+                    [alt="delete"] {
+                        width: 1rem;
+                        height: 1rem;
+                        margin-right: 0.5rem;
+                    }
+                    .delete {
+                        margin-right: 0.5rem;
+                        color: hsl(358, 79%, 66%);
+                    }
+                    .delete:hover {
+                        color: hsl(357, 100%, 86%);
+                    }
+                    [alt="edit"] {
+                        width: 1rem;
+                        height: 1rem;
+                        margin-right: 0.5rem;
+                    }
+                    span {
+                        color: hsl(238, 40%, 52%);
+                        text-transform: capitalize;
+                        font-weight: bolder;
+                    }
+                    span:hover {
+                        color: hsl(223, 19%, 93%);
+                    }
+                }
+            }
+        }
+    }
+}
+.inputComment {
+    width: 100%;
+    transition: ease-in-out, width 0.35s ease-in-out;
+    border: none;
+    border-radius: 7px;
+    resize: none;
+    min-height: auto;
+
+    background-color: white;
+}
+.updateBtn {
+    background-color: hsl(238, 40%, 52%);
+    height: 2.5rem;
+    width: 5rem;
+    text-transform: capitalize;
+    border-radius: 5px;
+    margin: auto;
+    margin-right: 0;
+}
+.updateBtn:hover {
+    background-color: hsl(239, 57%, 85%);
+    border: none;
+}
+// responsivness on mobile
+@media screen and (max-width: 490px) {
+    .comment {
+        max-width: 720px;
+    }
+}
+@media screen and (max-width: 420px) {
+    .score {
+        display: none !important;
+    }
+    .replySection {
+        display: none !important;
+    }
+    .manageComment {
+        display: none !important;
+    }
+    // show reply button for mobile
+    .showOnMobile {
+        display: flex !important;
+    }
+}

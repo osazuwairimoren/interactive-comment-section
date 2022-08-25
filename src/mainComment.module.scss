@@ -1,0 +1,135 @@
+// comment component styling
+.comment {
+    max-width: 720px;
+    background-color: hsl(0, 0%, 100%);
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-height: 5rem;
+    height: fit-content;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    // score component inside comment component
+    .score {
+        background-color: hsl(223, 19%, 93%);
+        color: hsl(211, 10%, 45%);
+        height: 4.5rem;
+        margin-bottom: auto;
+        border-radius: 7px;
+        display: flex;
+        flex-direction: column;
+        width: 1.8rem;
+        align-items: center;
+        justify-content: space-evenly;
+        // plus and minus icons
+        [alt="plus"] {
+            width: 0.9rem;
+        }
+        [alt="minus"] {
+            width: 0.9rem;
+        }
+        // score value
+        span {
+            margin-top: 0rem;
+            margin-bottom: 0rem;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: hsl(238, 40%, 52%);
+        }
+    }
+    // other row
+    .other {
+        color: hsl(211, 10%, 45%);
+        margin-left: 1rem;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        // top section in other row
+        .otherfirstRow {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            padding-bottom: 0.5rem;
+            // first section in other section
+            .otherfirstRowCollumn {
+                display: flex;
+                // profile picture
+                [alt="user"] {
+                    width: 2rem;
+                    height: 2rem;
+                    margin-right: 0.5rem;
+                }
+                .userName {
+                    font-weight: bold;
+                    margin-right: 0.5rem;
+                }
+            }
+            .replySection {
+                display: flex;
+                cursor: pointer;
+                [alt="reply"] {
+                    width: 1.1rem;
+                    height: 1.1rem;
+                    margin-right: 0.5rem;
+                }
+                span {
+                    color: hsl(238, 40%, 52%);
+                    text-transform: capitalize;
+                    font-weight: bolder;
+                }
+                span:hover {
+                    color: hsl(223, 19%, 93%);
+                }
+            }
+        }
+        // other section/main reply
+        .otherSecondRow {
+            color: hsl(212, 24%, 26%);
+        }
+        .showOnMobile {
+            display: none;
+        }
+    }
+    // responsivness on mobile
+    @media screen and (max-width: 420px) {
+        .score {
+            display: none !important;
+        }
+        .replySection {
+            display: none !important;
+        }
+        // show reply button for mobile
+        .showOnMobile {
+            display: flex !important;
+            justify-content: space-between;
+            padding-top: 1rem;
+            .score {
+                display: flex !important;
+                flex-direction: row;
+                justify-content: space-around;
+                height: 1.9rem;
+                width: 5rem;
+            }
+            .replySection {
+                display: flex !important;
+                cursor: pointer;
+                [alt="reply"] {
+                    width: 1.1rem;
+                    height: 1.1rem;
+                    margin-right: 0.5rem;
+                }
+                span {
+                    color: hsl(238, 40%, 52%);
+                    text-transform: capitalize;
+                    font-weight: bolder;
+                }
+                span:hover {
+                    color: hsl(223, 19%, 93%);
+                }
+            }
+        }
+    }
+}

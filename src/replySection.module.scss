@@ -1,0 +1,23 @@
+.container {
+    max-width: 720px;
+    position: relative;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.verticalRule {
+    border-right: 0.1px solid hsl(211, 10%, 45%);
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem;
+    height: inherit;
+}
+.comments {
+    width: 89%;
+}
+@media screen and (max-width: 490px) {
+    .comments {
+        width: 93%;
+    }
+}
